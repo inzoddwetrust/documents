@@ -1,0 +1,32 @@
+name: Claude Documentation Assistant
+
+# Этот workflow активируется при упоминании @claude в issues или PR
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created]
+  pull_request:
+    types: [opened, synchronize]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  claude:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    
+    steps:
+    - name: Claude Code Action
+      uses: anthropics/claude-code-action@v1
+      with:
+        anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+
+# ВАЖНО: Для работы этого workflow необходимо:
+# 1. Установить Claude GitHub App: https://github.com/apps/claude
+# 2. Добавить ANTHROPIC_API_KEY в Settings -> Secrets and variables -> Actions
+# 3. Создать файл CLAUDE.md с инструкциями для Claude

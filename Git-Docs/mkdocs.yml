@@ -1,0 +1,132 @@
+# Информация о сайте
+site_name: Documentation Artem
+site_description: База знаний и документация
+site_author: Artem
+site_url: https://username.github.io/documentation-artem
+
+# Репозиторий
+repo_name: username/documentation-artem
+repo_url: https://github.com/username/documentation-artem
+edit_uri: edit/main/docs/
+
+# Копирайт
+copyright: Copyright &copy; 2025 Artem
+
+# Тема
+theme:
+  name: material
+  language: ru
+  
+  # Цветовая схема
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Переключить на темную тему
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Переключить на светлую тему
+  
+  # Иконка
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+  
+  # Возможности
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+# Навигация
+nav:
+  - Главная: index.md
+  - Начало работы:
+    - Установка: getting-started/installation.md
+    - Быстрый старт: getting-started/quickstart.md
+  - Руководства:
+    - Docs as Code: Полное руководство: guides/docs-as-code-complete-guide.md
+    - Работа с GitHub: guides/github-workflow.md
+    - Интеграция с Claude: guides/claude-integration.md
+  - Справочник:
+    - Markdown синтаксис: reference/markdown-syntax.md
+    - Git команды: reference/git-commands.md
+  - Туториалы:
+    - Первый документ: tutorials/first-document.md
+
+# Плагины
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+      lang:
+        - ru
+        - en
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
+# Расширения Markdown
+markdown_extensions:
+  # Syntax highlighting
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+  
+  # Admonitions
+  - admonition
+  - pymdownx.details
+  
+  # Lists
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  
+  # Formatting
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  
+  # Attributes
+  - attr_list
+  - md_in_html
+  
+  # Emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
+  # Tables
+  - tables
+  
+  # Footnotes
+  - footnotes
+
+# Дополнительно
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/username

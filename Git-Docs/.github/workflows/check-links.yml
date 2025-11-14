@@ -1,0 +1,24 @@
+name: Check Links
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+  schedule:
+    # Каждый понедельник в 9:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Check Markdown links
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'
+        config-file: '.github/workflows/link-check-config.json'
